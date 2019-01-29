@@ -1,0 +1,21 @@
+[
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"0.10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"0.10",
+    "quantity":"10"
+  },
+  {
+    "message_type": "adjustment",
+    "product_type":"banana",
+    "value":"0.10",
+    "adjustment":"add",
+    "adjustment_value":"0.10"
+  }
+
+]
