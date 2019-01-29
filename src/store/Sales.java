@@ -16,12 +16,19 @@ public class Sales {
     }
 
 
-    public Map<Product ,List<Sale>> getTotalSales() {
-        return totalSales;
+    public void addSaleForType(Sale sale, String messageType) throws InvalidSaleException {
+        switch (messageType) {
+            case "sale" :addNewSale(sale);
+                break;
+            case "quantity" : addNewSale((QuantitySale) sale);
+                break;
+            case "adjustment" : addNewSale((AdjustmentSale) sale);
+        }
+
     }
 
-
-    public void addNewSale (Sale sale) {
+    private void addNewSale (Sale sale) {
+        System.out.println("Adding Sale");
         if(sale.getProduct() != null) {
             try {
                 addNewProduct(sale.getProduct());
@@ -35,7 +42,8 @@ public class Sales {
         }
     }
 
-    public void addNewSale (QuantitySale sale) {
+    private void addNewSale (QuantitySale sale) {
+        System.out.println("Adding Quantity Sale");
         if(sale.getProduct() != null) {
             try {
                 addNewProduct(sale.getProduct());
@@ -50,7 +58,8 @@ public class Sales {
 
     }
 
-    public void addNewSale (AdjustmentSale sale) throws InvalidSaleException{
+    private void addNewSale (AdjustmentSale sale) throws InvalidSaleException{
+        System.out.println("Adding Adjustment Sale");
         if(sale.getProduct() != null) {
             try {
                 addNewProduct(sale.getProduct());
@@ -89,18 +98,18 @@ public class Sales {
 
         if (operation.getOperationType().equals(OperationType.ADD)){
            for (Sale sale : totalSales.get(product)) {
-               sale.setValue(sale.getValue().add(operation.getValue().getValue()));
+               sale.setValue(sale.getValue() + operation.getValue());
            }
 
         } else if (operation.getOperationType().equals(OperationType.SUBTRACT)) {
             for (Sale sale : totalSales.get(product)) {
-                sale.setValue(sale.getValue().subtract(operation.getValue().getValue()));
+                sale.setValue(sale.getValue() - operation.getValue());
             }
 
 
         } else if (operation.getOperationType().equals(OperationType.MULTIPLY)) {
             for (Sale sale : totalSales.get(product)) {
-                sale.setValue(sale.getValue().multiply(operation.getValue().getValue()));
+                sale.setValue(sale.getValue() * operation.getValue());
             }
         }
     }

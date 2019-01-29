@@ -1,24 +1,22 @@
 package representation;
 
-import java.math.BigDecimal;
-
 /* This class represents Message Type 2 */
 public class QuantitySale extends Sale {
 
-    private int amount;
+    private int quantity;
 
-    public QuantitySale(Product product, BigDecimal value, int amount) {
+    public QuantitySale(Product product, Double value, int quantity) {
         super(product, value);
-        this.amount = amount;
+        this.quantity = quantity;
     }
 
 
     public int getAmount() {
-        return amount;
+        return quantity;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setAmount(int quantity) {
+        this.quantity = quantity;
     }
 
 

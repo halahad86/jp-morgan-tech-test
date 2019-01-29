@@ -6,21 +6,17 @@ public class Operation {
 
     private OperationType operationType;
 
-    private Value value;
+    private Double value;
 
-
-    public Operation(OperationType operationType, Value value) {
-        this.operationType = operationType;
-        this.value = value;
+    public Operation() {
 
     }
 
-
-    public Value getValue() {
+    public Double getValue() {
         return value;
     }
 
-    public void setValue(Value value) {
+    public void setValue(Double value) {
         this.value = value;
     }
 

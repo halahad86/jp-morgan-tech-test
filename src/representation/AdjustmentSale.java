@@ -1,14 +1,11 @@
 package representation;
 
-import java.math.BigDecimal;
-
-
 /* This class represents Message Type 3 */
 public class AdjustmentSale extends Sale {
 
     private Operation operation;
 
-    public AdjustmentSale(Product product, BigDecimal value, Operation operation) {
+    public AdjustmentSale(Product product, Double value, Operation operation) {
         super(product, value);
         this.operation = operation;
     }

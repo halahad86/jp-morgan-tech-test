@@ -1,16 +1,14 @@
 package representation;
 
-import java.math.BigDecimal;
-
 /* This class represents Message Type 1 */
 public class Sale {
 
     private Product product;
 
-    private BigDecimal value;
+    private Double value;
 
 
-    public Sale(Product product, BigDecimal value) {
+    public Sale(Product product, Double value) {
         this.product = product;
         this.value = value;
     }
@@ -23,11 +21,11 @@ public class Sale {
         this.product = product;
     }
 
-    public BigDecimal getValue() {
+    public Double getValue() {
         return value;
     }
 
-    public void setValue(BigDecimal value) {
+    public void setValue(Double value) {
         this.value = value;
     }
 
