@@ -2,20 +2,419 @@
   {
     "message_type": "sale",
     "product_type":"apple",
-    "value":"0.10"
+    "value":"10"
   },
   {
     "message_type": "quantity",
     "product_type":"orange",
-    "value":"0.10",
+    "value":"20",
     "quantity":"10"
   },
   {
     "message_type": "adjustment",
+    "product_type":"orange",
+    "value":"5",
+    "adjustment":"multiply",
+    "adjustment_value":"2"
+  },
+  {
+    "message_type": "adjustment",
+    "product_type":"apple",
+    "value":"5",
+    "adjustment":"subtract",
+    "adjustment_value":"1"
+  },
+  {
+    "message_type": "adjustment",
     "product_type":"banana",
-    "value":"0.10",
+    "value":"5",
     "adjustment":"add",
-    "adjustment_value":"0.10"
+    "adjustment_value":"2"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
+  },
+  {
+    "message_type": "sale",
+    "product_type":"apple",
+    "value":"10"
+  },
+  {
+    "message_type": "quantity",
+    "product_type":"orange",
+    "value":"20",
+    "quantity":"10"
   }
 
 ]

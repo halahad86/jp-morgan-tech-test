@@ -1,22 +1,32 @@
-package builder;
+package prog.builder;
 
-import exceptions.InvalidOperationException;
-import exceptions.InvalidSaleException;
-import representation.*;
-import utils.OperationType;
+import prog.exceptions.InvalidOperationException;
+import prog.exceptions.InvalidSaleException;
+import prog.representation.*;
+
+import prog.utils.OperationType;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MessageBuilder {
+
+    private static List<AdjustmentSale> adjustmentsList = new ArrayList<>();
+
+    public static List<AdjustmentSale> getAdjustmentsList() {
+        return adjustmentsList;
+    }
 
     public static Sale buildMessage(Message message) throws InvalidOperationException, InvalidSaleException {
         if (message == null) {
             throw new InvalidSaleException("Message is null");
         }
 
-        Product product = new Product(message.getProduct());
-        Double value = Double.parseDouble(message.getValue());
+        String product = message.getProduct();
+        double value = Double.parseDouble(message.getValue());
 
         if (message.getQuantity() != null) {
-            return buildQuantitySaleMessage(message, product, value);
+            return buildSaleWithQuantityMessage(message, product, value);
 
         } else if (message.getAdjustment() != null) {
             return buildAdjustmentSaleMessage(message, product, value);
@@ -25,22 +35,25 @@ public class MessageBuilder {
         }
     }
 
-
-    private static Sale buildSaleMessage(Product product, Double value) {
-        return new Sale(product, value);
+    private static void addAdjustmentToTracker (AdjustmentSale adjustmentSale) {
+        adjustmentsList.add(adjustmentSale);
     }
 
-    private static QuantitySale buildQuantitySaleMessage(Message message, Product product, Double value) {
-        return new QuantitySale(product, value, Integer.parseInt(message.getQuantity()));
+    private static Sale buildSaleMessage(String product, Double value) {
+        return new Sale(product, value, 1);
     }
 
-    private static AdjustmentSale buildAdjustmentSaleMessage(Message message, Product product, Double value)
+    private static Sale buildSaleWithQuantityMessage(Message message, String product, Double value) {
+        return new Sale(product, value, Integer.parseInt(message.getQuantity()));
+    }
+
+    private static AdjustmentSale buildAdjustmentSaleMessage(Message message, String product, Double value)
             throws InvalidOperationException {
-
-        return new AdjustmentSale(product, value,
+        AdjustmentSale adjustmentSale = new AdjustmentSale(product, value,
                 determineOperation(message.getAdjustment(), message.getAdjustment_value()));
+        addAdjustmentToTracker(adjustmentSale);
+        return adjustmentSale;
     }
-
 
 
     private static Operation determineOperation(String adjustment, String adjustmentValue) throws InvalidOperationException{
@@ -59,7 +72,7 @@ public class MessageBuilder {
             default: throw new InvalidOperationException("Unable to parse operation type, unknown operation");
         }
 
-        Double value = Double.parseDouble(adjustmentValue);
+        double value = Double.parseDouble(adjustmentValue);
         operation.setValue(value);
 
         return operation;

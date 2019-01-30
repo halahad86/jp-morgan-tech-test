@@ -1,6 +1,6 @@
-package representation;
+package prog.representation;
 
-import utils.OperationType;
+import prog.utils.OperationType;
 
 public class Operation {
 

@@ -1,26 +1,41 @@
-package store;
+package prog.store;
 
-import exceptions.*;
-import representation.*;
-import utils.*;
+import prog.exceptions.InvalidOperationException;
+import prog.exceptions.InvalidSaleException;
+import prog.exceptions.NoSuchProductException;
+import prog.exceptions.ProductAlreadyExistsException;
+import prog.representation.*;
+import prog.utils.OperationType;
 
 import java.util.*;
 
 public class Sales {
 
-    private Map<Product ,List<Sale>> totalSales;
-
+    private Map<String,List<Sale>> totalSales;
 
     public Sales() {
         this.totalSales = new HashMap<>();
     }
 
+    public Map<String,List<Sale>> getTotalSales() {
+        return totalSales;
+    }
+
+    public List<Sale> getListOfProductSales(String product) throws NoSuchProductException{
+        if(!totalSales.containsKey(product)) {
+            throw new NoSuchProductException("No such product in sales");
+        }
+            return totalSales.get(product);
+    }
 
     public void addSaleForType(Sale sale, String messageType) throws InvalidSaleException {
+        if (messageType == null || messageType.equals("")) {
+            throw new InvalidSaleException("Message Type null or empty");
+        }
         switch (messageType) {
             case "sale" :addNewSale(sale);
                 break;
-            case "quantity" : addNewSale((QuantitySale) sale);
+            case "quantity" : addNewSale(sale);
                 break;
             case "adjustment" : addNewSale((AdjustmentSale) sale);
         }
@@ -28,44 +43,25 @@ public class Sales {
     }
 
     private void addNewSale (Sale sale) {
-        System.out.println("Adding Sale");
         if(sale.getProduct() != null) {
             try {
                 addNewProduct(sale.getProduct());
 
             } catch (ProductAlreadyExistsException e) {
-                System.out.println("Not adding new Product, already exists");
-
+                // could do something specific here
             } finally {
                 totalSales.get(sale.getProduct()).add(sale);
             }
         }
-    }
-
-    private void addNewSale (QuantitySale sale) {
-        System.out.println("Adding Quantity Sale");
-        if(sale.getProduct() != null) {
-            try {
-                addNewProduct(sale.getProduct());
-
-            } catch (ProductAlreadyExistsException e) {
-                System.out.println("Not adding new Product, already exists");
-
-            } finally {
-                totalSales.get(sale.getProduct()).add(sale);
-            }
-        }
-
     }
 
     private void addNewSale (AdjustmentSale sale) throws InvalidSaleException{
-        System.out.println("Adding Adjustment Sale");
         if(sale.getProduct() != null) {
             try {
                 addNewProduct(sale.getProduct());
 
             } catch (ProductAlreadyExistsException e) {
-                System.out.println("Not adding new Product, already exists");
+                // could do something specific here
             }
 
             totalSales.get(sale.getProduct()).add(sale);
@@ -82,7 +78,7 @@ public class Sales {
     }
 
 
-    private void addNewProduct(Product product) throws ProductAlreadyExistsException {
+    private void addNewProduct(String product) throws ProductAlreadyExistsException {
         if (totalSales == null || totalSales.containsKey(product)) {
             throw new ProductAlreadyExistsException("This product already exists");
         }
@@ -91,9 +87,9 @@ public class Sales {
     }
 
 
-    private void updateProductForOperation(Product product, Operation operation) throws InvalidOperationException{
+    private void updateProductForOperation(String product, Operation operation) throws InvalidOperationException{
         if (operation == null) {
-            throw new InvalidOperationException("Invalid utils");
+            throw new InvalidOperationException("Invalid operation provided");
         }
 
         if (operation.getOperationType().equals(OperationType.ADD)){

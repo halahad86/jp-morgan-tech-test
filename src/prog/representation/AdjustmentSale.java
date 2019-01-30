@@ -1,12 +1,12 @@
-package representation;
+package prog.representation;
 
 /* This class represents Message Type 3 */
 public class AdjustmentSale extends Sale {
 
     private Operation operation;
 
-    public AdjustmentSale(Product product, Double value, Operation operation) {
-        super(product, value);
+    public AdjustmentSale(String product, Double value, Operation operation) {
+        super(product, value, 1);
         this.operation = operation;
     }
 

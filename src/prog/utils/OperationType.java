@@ -1,4 +1,4 @@
-package utils;
+package prog.utils;
 
 public enum OperationType {
 

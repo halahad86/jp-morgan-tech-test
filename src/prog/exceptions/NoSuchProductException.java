@@ -1,4 +1,4 @@
-package exceptions;
+package prog.exceptions;
 
 public class NoSuchProductException extends Exception{
 
